@@ -22,6 +22,9 @@ import {
   isSeparateProcessor,
 } from './utils/helpers';
 
+/**
+ * @publicApi
+ */
 function createQueueAndWorkers<TQueue = Queue, TWorker extends Worker = Worker>(
   options: RegisterQueueOptions,
   queueClass: Type<TQueue>,
@@ -73,6 +76,9 @@ function createQueueAndWorkers<TQueue = Queue, TWorker extends Worker = Worker>(
   return queue;
 }
 
+/**
+ * @publicApi
+ */
 function createFlowProducers<TFlowProducer = FlowProducer>(
   options: RegisterFlowProducerOptions,
   flowProducerClass: Type<TFlowProducer>
@@ -86,6 +92,9 @@ function createFlowProducers<TFlowProducer = FlowProducer>(
   return flowProducer;
 }
 
+/**
+ * @publicApi
+ */
 export function createQueueOptionProviders(
   options: RegisterQueueOptions[],
 ): Provider[] {
@@ -111,6 +120,9 @@ export function createQueueOptionProviders(
   return flatten(providers);
 }
 
+/**
+ * @publicApi
+ */
 export function createFlowProducerOptionProviders(
   options: RegisterFlowProducerOptions[],
 ): Provider[] {
@@ -136,6 +148,9 @@ export function createFlowProducerOptionProviders(
   return flatten(providers);
 }
 
+/**
+ * @publicApi
+ */
 export function createQueueProviders<
   TQueue = Queue,
   TWorker extends Worker = Worker,
@@ -159,6 +174,9 @@ export function createQueueProviders<
   return queueProviders;
 }
 
+/**
+ * @publicApi
+ */
 export function createFlowProducerProviders<
   TFlowProducer = FlowProducer,
 >(

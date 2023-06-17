@@ -2,6 +2,9 @@ import { FactoryProvider, ModuleMetadata, Type } from '@nestjs/common';
 import * as Bull from 'bull';
 import { BullQueueProcessor } from '../bull.types';
 
+/**
+ * @publicApi
+ */
 export interface BullRootModuleOptions extends Bull.QueueOptions {
   /**
    * Redis client connection string
@@ -9,18 +12,21 @@ export interface BullRootModuleOptions extends Bull.QueueOptions {
   url?: string;
 }
 
+/**
+ * @publicApi
+ */
 export interface BullModuleOptions extends BullRootModuleOptions {
   /**
    * Queue name
    *
-   * @default default
+   * By default Queue name and set to "default"
    */
   name?: string;
 
   /**
    * Shared configuration key
    *
-   * @default default
+   * By default configKey and set to "default"
    */
   configKey?: string;
 
@@ -30,16 +36,22 @@ export interface BullModuleOptions extends BullRootModuleOptions {
   processors?: BullQueueProcessor[];
 }
 
+/**
+ * @publicApi
+ */
 export interface BullOptionsFactory {
   createBullOptions(): Promise<BullModuleOptions> | BullModuleOptions;
 }
 
+/**
+ * @publicApi
+ */
 export interface BullModuleAsyncOptions
   extends Pick<ModuleMetadata, 'imports'> {
   /**
    * Queue name.
    *
-   * @default default
+   * By default Queue name and set to "default"
    */
   name?: string;
 

@@ -2,18 +2,21 @@ import { FactoryProvider, ModuleMetadata, Type } from '@nestjs/common';
 import { QueueOptions } from 'bullmq';
 import { BullQueueProcessor } from '../bull.types';
 
+/**
+ * @publicApi
+ */
 export interface RegisterQueueOptions extends QueueOptions {
   /**
    * Queue name
    *
-   * @default default
+   * By default Queue name and set to "default"
    */
   name?: string;
 
   /**
    * Shared configuration key
    *
-   * @default default
+   * By default configKey and set to "default"
    */
   configKey?: string;
 
@@ -23,18 +26,24 @@ export interface RegisterQueueOptions extends QueueOptions {
   processors?: BullQueueProcessor[];
 }
 
+/**
+ * @publicApi
+ */
 export interface RegisterQueueOptionsFactory {
   createRegisterQueueOptions():
     | Promise<RegisterQueueOptions>
     | RegisterQueueOptions;
 }
 
+/**
+ * @publicApi
+ */
 export interface RegisterQueueAsyncOptions
   extends Pick<ModuleMetadata, 'imports'> {
   /**
    * Queue name.
    *
-   * @default default
+   * By default Queue name and set to "default"
    */
   name?: string;
 

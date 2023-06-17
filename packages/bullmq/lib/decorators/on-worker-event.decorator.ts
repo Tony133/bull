@@ -7,6 +7,8 @@ export interface OnWorkerEventMetadata {
 }
 
 /**
+ * @publicApi
+ * 
  * Registers a worker event listener.
  * Class that contains worker event listeners must be annotated
  * with the "Processor" decorator.

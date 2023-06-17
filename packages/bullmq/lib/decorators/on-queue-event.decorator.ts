@@ -7,6 +7,8 @@ export interface OnQueueEventMetadata {
 }
 
 /**
+ * @publicApi
+ * 
  * Registers a queue event listener.
  * Class that contains queue event listeners must be annotated
  * with the "QueueEventsListener" decorator.

@@ -1,34 +1,43 @@
 import { FactoryProvider, ModuleMetadata, Type } from '@nestjs/common';
 import { QueueBaseOptions } from 'bullmq';
 
+/**
+ * @publicApi
+ */
 export interface RegisterFlowProducerOptions extends QueueBaseOptions {
   /**
    * Flow name
    *
-   * @default default
+   * By default Flow name and set to "default"
    */
   name?: string;
 
   /**
    * Shared configuration key
    *
-   * @default default
+   * By default configKey and set to "default"
    */
   configKey?: string;
 }
 
+/**
+ * @publicApi
+ */
 export interface RegisterFlowProducerOptionsFactory {
   createRegisterQueueOptions():
     | Promise<RegisterFlowProducerOptions>
     | RegisterFlowProducerOptions;
 }
 
+/**
+ * @publicApi
+ */
 export interface RegisterFlowProducerAsyncOptions
   extends Pick<ModuleMetadata, 'imports'> {
   /**
    * Flow name.
    *
-   * @default default
+   * By default Flow name and set to "default"
    */
   name?: string;
 

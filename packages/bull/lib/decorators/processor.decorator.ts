@@ -2,6 +2,9 @@ import { Scope, SetMetadata } from '@nestjs/common';
 import { SCOPE_OPTIONS_METADATA } from '@nestjs/common/constants';
 import { BULL_MODULE_QUEUE } from '../bull.constants';
 
+/**
+ * @publicApi
+ */
 export interface ProcessorOptions {
   /**
    * Specifies the name of the queue to subscribe to.
@@ -14,15 +17,23 @@ export interface ProcessorOptions {
 }
 
 /**
+ * @publicApi
+ * 
  * Represents a worker that is able to process jobs from the queue.
  */
 export function Processor(): ClassDecorator;
+
 /**
+ * @publicApi
+ * 
  * Represents a worker that is able to process jobs from the queue.
  * @param queueName queue name
  */
 export function Processor(queueName: string): ClassDecorator;
+
 /**
+ * @publicApi
+ * 
  * Represents a worker that is able to process jobs from the queue.
  * @param processorOptions processor options
  */

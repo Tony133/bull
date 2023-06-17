@@ -2,6 +2,8 @@ import { Inject } from '@nestjs/common';
 import { getFlowProducerToken } from '../utils';
 
 /**
+ * @publicApi
+ * 
  * Injects Bull's flow producer instance with the given name
  * @param name flow producer name
  */

@@ -32,6 +32,9 @@ import {
   getSharedConfigToken,
 } from './utils';
 
+/**
+ * @publicApi
+ */
 @Module({})
 export class BullModule {
   private static _queueClass: Type = Queue;
@@ -42,7 +45,7 @@ export class BullModule {
    * Class to be used to create Bull queues.
    * This configuration property can be used to instruct the "@nestjs/bullmq"
    * package to use, for example, "QueuePro" class (from "BullMQ Pro").
-   * @default Queue
+   * By default is Queue
    */
   static set queueClass(cls: Type) {
     this._queueClass = cls;
@@ -52,7 +55,7 @@ export class BullModule {
    * Class to be used to create Bull flow producers.
    * This configuration property can be used to instruct the "@nestjs/bullmq"
    * package to use, for example, "FlowProducerPro" class (from "BullMQ Pro").
-   * @default FlowProducer
+   * By default is FlowProducer
    */
   static set flowProducerClass(cls: Type) {
     this._flowProducerClass = cls;
@@ -62,7 +65,7 @@ export class BullModule {
    * Class to be used to create Bull workers.
    * This configuration property can be used to instruct the "@nestjs/bullmq"
    * package to use, for example, "WorkerPro" class (from "BullMQ Pro").
-   * @default Worker
+   * By default is Worker
    */
   static set workerClass(cls: Type) {
     BullExplorer.workerClass = cls;

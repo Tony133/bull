@@ -1,10 +1,16 @@
 import { FactoryProvider, ModuleMetadata, Type } from '@nestjs/common';
 import * as Bull from 'bullmq';
 
+/**
+ * @publicApi
+ */
 export interface SharedBullConfigurationFactory {
   createSharedConfiguration(): Promise<Bull.QueueOptions> | Bull.QueueOptions;
 }
 
+/**
+ * @publicApi
+ */
 export interface SharedBullAsyncConfiguration
   extends Pick<ModuleMetadata, 'imports'> {
   /**

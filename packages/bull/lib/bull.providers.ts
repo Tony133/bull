@@ -18,6 +18,9 @@ import { isAdvancedSeparateProcessor } from './utils/is-advanced-separate-proces
 import { isProcessorCallback } from './utils/is-processor-callback.util';
 import { isSeparateProcessor } from './utils/is-separate-processor.util';
 
+/**
+ * @publicApi
+ */
 function buildQueue(options: BullModuleOptions): Queue {
   const queueName = options.name ? options.name : 'default';
   const queue: Queue = options?.url
@@ -48,6 +51,9 @@ function buildQueue(options: BullModuleOptions): Queue {
   return queue;
 }
 
+/**
+ * @publicApi
+ */
 export function createQueueOptionProviders(
   options: BullModuleOptions[],
 ): Provider[] {
@@ -73,6 +79,9 @@ export function createQueueOptionProviders(
   return flatten(providers);
 }
 
+/**
+ * @publicApi
+ */
 export function createQueueProviders(options: BullModuleOptions[]): Provider[] {
   return options.map((option) => ({
     provide: getQueueToken(option.name),

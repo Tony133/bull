@@ -3,6 +3,9 @@ import { SCOPE_OPTIONS_METADATA } from '@nestjs/common/constants';
 import { WorkerOptions } from 'bullmq';
 import { PROCESSOR_METADATA, WORKER_METADATA } from '../bull.constants';
 
+/**
+ * @publicApi
+ */
 export interface ProcessorOptions {
   /**
    * Specifies the name of the queue to subscribe to.
@@ -19,11 +22,15 @@ export interface ProcessorOptions {
 }
 
 /**
+ * @publicApi
+ * 
  * Represents a worker that is able to process jobs from the queue.
  * @param queueName name of the queue to process
  */
 export function Processor(queueName: string): ClassDecorator;
+
 /**
+ * @publicApi
  * Represents a worker that is able to process jobs from the queue.
  * @param queueName name of the queue to process
  * @param workerOptions additional worker options
@@ -32,12 +39,18 @@ export function Processor(
   queueName: string,
   workerOptions: WorkerOptions,
 ): ClassDecorator;
+
 /**
+ * @publicApi
+ * 
  * Represents a worker that is able to process jobs from the queue.
  * @param processorOptions processor options
  */
 export function Processor(processorOptions: ProcessorOptions): ClassDecorator;
+
 /**
+ * @publicApi
+ * 
  * Represents a worker that is able to process jobs from the queue.
  * @param processorOptions processor options (Nest-specific)
  * @param workerOptions additional Bull worker options
